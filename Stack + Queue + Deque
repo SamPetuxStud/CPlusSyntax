@@ -1,0 +1,55 @@
+#include <iostream>
+#include <algorithm>
+#include <math.h>
+#include <string>
+
+#include <stack>
+#include <queue>
+#include <deque>
+
+using namespace std;
+
+int main() {
+
+	// Work with stacks (only last element is availible)
+	stack <int> myStack;
+	for (int i = 1; i <= 50; i++) {
+		myStack.push(i * i); // Adding element to end of the stack
+	}
+	for (int i = 0; i > 50; i++) {
+		cout << myStack.top() << endl; // Last element of the stack 
+		cout << myStack.size() << endl; // count of elements in the stack
+		myStack.pop(); // delete last element
+	}
+	if (myStack.empty()) // checking count of elements
+		cout << "Stack is empty";
+	myStack = stack <int>(); // Stack clearing
+
+
+	// Work with queue (can delete first and last element, but add - only in the end)
+	queue <int> myQueue;
+	for (int i = 1; i <= 50; i++) {
+		myQueue.push(i * i); // Adding element to end of the stack
+	}
+	cout << myQueue.back() << endl; // Last element of the queue
+	cout << myQueue.front() << endl; // First element of the queue
+	for (int i = 0; i > 50; i++) {
+		cout << myQueue.size(); // count of elements in the queue
+		myQueue.pop(); // delete last element
+	}
+	if (myQueue.empty()) // checking count of elements
+		cout << "Stack is empty";
+	myQueue = queue <int>(); // Queue clearing
+	
+
+	// Work with deque (first and last elements are fully availible)
+	deque <int> myDeque;
+	for (int i = 1; i <= 50; i++) {
+		myDeque.push_back(i * i); // Adding element to end of the stack
+		myDeque.push_front(i / 2); // Adding element to front of the stack
+	}
+	cout << myDeque.size() << endl; // count of elements int the deque
+	cout << myDeque.at(0) << endl; // Accessing the 1st element from front 
+	myDeque = deque <int>(); // Deque clearing
+	
+}
